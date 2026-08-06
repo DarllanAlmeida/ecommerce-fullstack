@@ -112,14 +112,54 @@ Admin Panel
 # 📸 Capturas del proyecto
 
 
-Próximamente se añadirán capturas:
+# 📸 Capturas del proyecto
 
-- Login
-- Productos
-- Detalle producto
-- Carrito
-- Panel administrador
-- Gestión de pedidos
+
+## 🔐 Login
+
+![Login](screenshots/Login.png)
+
+
+---
+
+## 🏠 Página principal
+
+![Home](screenshots/Home.png)
+
+
+---
+
+## 🛒 Carrito
+
+![Carrito](screenshots/Cart.png)
+
+
+---
+
+## 📦 Detalle del carrito
+
+![Detalle carrito](screenshots/cart-details.png)
+
+
+---
+
+## ⚙️ Panel administrador
+
+![Administrador](screenshots/admin.png)
+
+
+---
+
+## 🛍️ Gestión de productos
+
+![Productos administrador](screenshots/products-panel-admin.png)
+
+
+---
+
+## 📋 Pedidos
+
+![Pedidos](screenshots/pedido.png)
 
 
 
@@ -164,6 +204,6 @@ http://localhost:8080
 
 ---
 
-# 👨‍💻 Autor
+# 👨‍💻 Darllan
 
 Proyecto desarrollado como portfolio Full Stack.
