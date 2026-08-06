@@ -120,7 +120,7 @@ Próximamente se añadirán capturas:
 - Carrito
 - Panel administrador
 - Gestión de pedidos
-- Vista móvil
+
 
 
 ---
