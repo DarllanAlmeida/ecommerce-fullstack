@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Running",
+    "description": "Zapatillas para correr."
+  },
+  {
+    "name": "Lifestyle",
+    "description": "Zapatillas para uso diario."
+  },
+  {
+    "name": "Training",
+    "description": "Entrenamiento y gimnasio."
+  },
+  {
+    "name": "Basketball",
+    "description": "Zapatillas para baloncesto."
+  }
+]

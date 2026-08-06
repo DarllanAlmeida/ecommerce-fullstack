@@ -1,0 +1,426 @@
+.edit-product {
+
+    padding:30px;
+
+    width:100%;
+
+    box-sizing:border-box;
+
+}
+
+
+
+
+
+
+.edit-product h1 {
+
+    font-size:32px;
+
+    margin-bottom:30px;
+
+}
+
+
+
+
+
+
+
+
+.form-container {
+
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:18px;
+
+
+    box-shadow:
+
+    0 8px 25px rgba(0,0,0,.08);
+
+
+}
+
+
+
+
+
+
+
+
+label {
+
+
+    display:block;
+
+    font-weight:600;
+
+    margin-top:18px;
+
+    margin-bottom:6px;
+
+
+}
+
+
+
+
+
+
+
+
+input,
+
+textarea {
+
+
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid #ddd;
+
+    border-radius:8px;
+
+    font-size:15px;
+
+    box-sizing:border-box;
+
+
+}
+
+
+
+
+
+
+
+
+textarea {
+
+
+    height:120px;
+
+    resize:none;
+
+
+}
+
+
+
+
+
+
+
+
+
+h2 {
+
+
+    margin-top:35px;
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+   VARIANTES
+========================== */
+
+
+
+.variant-card {
+
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(5,1fr);
+
+
+    gap:15px;
+
+
+    background:#f7f7f7;
+
+
+    padding:20px;
+
+
+    border-radius:12px;
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+
+
+
+
+.variant-card button {
+
+
+    height:45px;
+
+    align-self:end;
+
+
+}
+
+
+
+
+
+
+
+.remove {
+
+
+    background:#c0392b;
+
+    color:white;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+
+}
+
+
+
+
+
+
+
+
+.add {
+
+
+    width:100%;
+
+    margin-top:15px;
+
+    padding:14px;
+
+
+    background:#333;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+
+}
+
+
+
+
+
+
+
+
+.save {
+
+
+    width:100%;
+
+    margin-top:20px;
+
+    padding:15px;
+
+
+    background:black;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+
+    font-size:16px;
+
+    cursor:pointer;
+
+
+}
+
+
+
+
+
+
+
+
+
+.loading {
+
+
+    padding:40px;
+
+    text-align:center;
+
+    font-size:20px;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+   TABLET
+========================== */
+
+
+@media(max-width:1000px){
+
+
+
+    .variant-card {
+
+
+        grid-template-columns:
+
+        repeat(2,1fr);
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+   MOVIL
+========================== */
+
+
+@media(max-width:600px){
+
+
+
+    .edit-product {
+
+
+        padding:15px;
+
+
+    }
+
+
+
+
+
+
+    .edit-product h1 {
+
+
+        font-size:25px;
+
+
+    }
+
+
+
+
+
+
+    .form-container {
+
+
+        padding:20px;
+
+        border-radius:14px;
+
+
+    }
+
+
+
+
+
+
+    .variant-card {
+
+
+        grid-template-columns:1fr;
+
+        padding:15px;
+
+
+    }
+
+
+
+
+
+
+
+    input,
+
+    textarea {
+
+
+        font-size:16px;
+
+
+    }
+
+
+
+
+
+
+
+    .save,
+
+    .add {
+
+
+        padding:16px;
+
+        font-size:16px;
+
+
+    }
+
+
+
+}

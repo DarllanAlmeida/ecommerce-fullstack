@@ -1,0 +1,64 @@
+<section class="categories">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                SHOP BY CATEGORY
+            </span>
+
+            <h2>
+                Encuentra tu estilo
+            </h2>
+
+            <p>
+                Descubre las colecciones diseñadas para cada momento.
+            </p>
+
+        </div>
+
+        <div class="categories-grid">
+
+            <article
+                class="category-card"
+                *ngFor="let category of categories">
+
+                <div class="circle"></div>
+                <div class="circle small"></div>
+
+                <div class="category-info">
+
+                    <h3>
+                        {{ category.title }}
+                    </h3>
+
+                    <p>
+                        {{ category.description }}
+                    </p>
+
+                    <a href="#">
+
+                        Descubrir
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+                <div class="category-image">
+
+                    <img
+                        [src]="category.image"
+                        [alt]="category.title">
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>

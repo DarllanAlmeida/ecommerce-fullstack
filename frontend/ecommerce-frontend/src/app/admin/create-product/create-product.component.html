@@ -1,0 +1,458 @@
+<div class="create-product">
+
+
+<h1>
+    Crear producto
+</h1>
+
+
+
+
+
+<div class="form-container">
+
+
+
+
+
+
+<label>
+    Nombre
+</label>
+
+
+<input
+
+type="text"
+
+name="name"
+
+[(ngModel)]="product.name">
+
+
+
+
+
+
+
+<label>
+    Descripción
+</label>
+
+
+<textarea
+
+name="description"
+
+[(ngModel)]="product.description">
+
+</textarea>
+
+
+
+
+
+
+
+
+
+<label>
+    Precio base
+</label>
+
+
+<input
+
+type="number"
+
+name="price"
+
+[(ngModel)]="product.price">
+
+
+
+
+
+
+
+
+
+<label>
+    Imagen
+</label>
+
+
+<input
+
+type="text"
+
+name="imageUrl"
+
+[(ngModel)]="product.imageUrl"
+
+placeholder="nike-air-max.png">
+
+
+
+
+
+
+
+
+
+
+<!-- ======================
+     MARCAS
+======================= -->
+
+
+<label>
+    Marca
+</label>
+
+
+
+<select
+
+name="brandId"
+
+[(ngModel)]="product.brandId">
+
+
+
+    <option
+
+    [value]="0"
+
+    disabled>
+
+        Selecciona una marca
+
+    </option>
+
+
+
+
+
+    <option
+
+    *ngFor="let brand of brands"
+
+    [value]="brand.id">
+
+
+        {{brand.name}}
+
+
+    </option>
+
+
+
+
+</select>
+
+
+
+
+
+
+
+
+
+<!-- ======================
+     CATEGORIAS
+======================= -->
+
+
+<label>
+    Categoría
+</label>
+
+
+
+<select
+
+name="categoryId"
+
+[(ngModel)]="product.categoryId">
+
+
+
+    <option
+
+    [value]="0"
+
+    disabled>
+
+        Selecciona una categoría
+
+    </option>
+
+
+
+
+
+    <option
+
+    *ngFor="let category of categories"
+
+    [value]="category.id">
+
+
+        {{category.name}}
+
+
+    </option>
+
+
+
+
+</select>
+
+
+
+
+
+
+
+
+
+<h2>
+    Variantes
+</h2>
+
+
+
+
+
+
+
+
+
+<div
+
+class="variant-card"
+
+*ngFor="let variant of variants; let i=index">
+
+
+
+
+
+
+
+<div>
+
+
+<label>
+    SKU
+</label>
+
+
+<input
+
+type="text"
+
+name="sku{{i}}"
+
+[(ngModel)]="variant.sku">
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div>
+
+
+<label>
+    Talla
+</label>
+
+
+<input
+
+type="text"
+
+name="size{{i}}"
+
+[(ngModel)]="variant.size">
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div>
+
+
+<label>
+    Color
+</label>
+
+
+<input
+
+type="text"
+
+name="color{{i}}"
+
+[(ngModel)]="variant.color">
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div>
+
+
+<label>
+    Precio
+</label>
+
+
+<input
+
+type="number"
+
+name="variantPrice{{i}}"
+
+[(ngModel)]="variant.price">
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div>
+
+
+<label>
+    Stock
+</label>
+
+
+<input
+
+type="number"
+
+name="variantStock{{i}}"
+
+[(ngModel)]="variant.stock">
+
+
+</div>
+
+
+
+
+
+
+
+
+<button
+
+type="button"
+
+class="remove"
+
+(click)="removeVariant(i)">
+
+
+    Eliminar
+
+
+</button>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<button
+
+type="button"
+
+class="add"
+
+(click)="addVariant()">
+
+
+
+    + Añadir variante
+
+
+
+</button>
+
+
+
+
+
+
+
+
+
+<button
+
+type="button"
+
+class="save"
+
+(click)="save()">
+
+
+
+    Guardar producto
+
+
+
+</button>
+
+
+
+
+
+
+
+
+</div>
+
+
+</div>

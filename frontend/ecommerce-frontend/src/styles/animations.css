@@ -1,0 +1,47 @@
+/* ==========================================
+   FADE
+========================================== */
+
+.fade-in{
+
+    animation:fade .6s ease;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+   HOVER CARD
+========================================== */
+
+.hover-card{
+
+    transition:var(--transition);
+
+}
+
+.hover-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-lg);
+
+}

@@ -1,0 +1,526 @@
+<section class="cart-page">
+
+
+<div class="cart-container">
+
+
+
+    <div class="cart-title">
+
+
+        <h1>
+
+            MI BOLSA DE COMPRAS
+
+            <span>
+
+                ({{items.length}})
+
+            </span>
+
+        </h1>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div
+
+    class="cart-layout"
+
+    *ngIf="items.length > 0">
+
+
+
+
+
+
+
+        <div class="products-column">
+
+
+
+
+
+            <article
+
+            class="cart-product"
+
+            *ngFor="let item of items">
+
+
+
+
+
+
+                <div class="product-image">
+
+
+                    <img
+
+                    [src]="'/images/products/' + item.imageUrl"
+
+                    [alt]="item.name">
+
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+                <div class="product-data">
+
+
+
+                    <h2>
+
+                        {{item.name}}
+
+                    </h2>
+
+
+
+
+
+
+
+
+                    <p class="price">
+
+                        {{item.price}} €
+
+                    </p>
+
+
+
+
+
+
+
+                    <p>
+
+                        Talla:
+
+                        <strong>
+
+                            {{item.size}}
+
+                        </strong>
+
+                    </p>
+
+
+
+
+
+
+
+                    <p>
+
+                        Color:
+
+                        <strong>
+
+                            {{item.color}}
+
+                        </strong>
+
+                    </p>
+
+
+
+
+
+
+
+                    <p>
+
+                        Stock disponible:
+
+                        {{item.stock}}
+
+                    </p>
+
+
+
+
+
+
+
+                    <p>
+
+                        Variante:
+
+                        #{{item.productVariantId}}
+
+                    </p>
+
+
+
+
+
+
+
+
+
+                    <div class="quantity">
+
+
+
+                        <span>
+
+                            CANTIDAD
+
+                        </span>
+
+
+
+
+
+                        <div class="counter">
+
+
+
+
+
+                            <button
+
+                            (click)="decrease(item.productVariantId)">
+
+
+                                −
+
+
+                            </button>
+
+
+
+
+
+
+
+
+                            <strong>
+
+                                {{item.quantity}}
+
+                            </strong>
+
+
+
+
+
+
+
+
+                            <button
+
+                            (click)="increase(item.productVariantId)"
+
+                            [disabled]="item.quantity >= item.stock">
+
+
+                                +
+
+
+                            </button>
+
+
+
+
+
+
+
+                        </div>
+
+
+
+
+
+                    </div>
+
+
+
+
+
+
+
+
+
+                    <button
+
+                    class="remove"
+
+                    (click)="confirmRemove(item.productVariantId)">
+
+
+
+                        🗑 Eliminar
+
+
+
+                    </button>
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+
+            </article>
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <aside class="summary">
+
+
+
+
+
+
+
+
+            <h2>
+
+                RESUMEN DEL PEDIDO
+
+            </h2>
+
+
+
+
+
+
+
+
+            <div class="summary-row">
+
+
+
+                <span>
+
+                    SUBTOTAL
+
+                </span>
+
+
+
+                <strong>
+
+                    {{total}} €
+
+                </strong>
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+            <div class="summary-row">
+
+
+
+                <span>
+
+                    GASTOS DE ENVÍO
+
+                </span>
+
+
+
+                <strong>
+
+                    GRATIS
+
+                </strong>
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+            <hr>
+
+
+
+
+
+
+
+
+            <div class="total-row">
+
+
+
+                <span>
+
+                    TOTAL
+
+                </span>
+
+
+
+                <strong>
+
+                    {{total}} €
+
+                </strong>
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+            <button
+
+            class="checkout"
+
+            (click)="checkout()">
+
+
+
+                FINALIZAR COMPRA
+
+
+
+            </button>
+
+
+
+
+
+
+
+
+            <button
+
+            class="continue"
+
+            routerLink="/products">
+
+
+
+                SEGUIR COMPRANDO
+
+
+
+            </button>
+
+
+
+
+
+
+
+        </aside>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div
+
+    class="empty-cart"
+
+    *ngIf="items.length === 0">
+
+
+
+        <h2>
+
+            Tu bolsa está vacía
+
+        </h2>
+
+
+
+
+
+        <p>
+
+            Añade productos para continuar.
+
+        </p>
+
+
+
+    </div>
+
+
+
+
+
+
+
+</div>
+
+
+
+</section>

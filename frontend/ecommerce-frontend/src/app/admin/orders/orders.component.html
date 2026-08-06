@@ -1,0 +1,674 @@
+<div class="orders-admin">
+
+
+    <div class="header">
+
+        <h1>
+            Pedidos
+        </h1>
+
+    </div>
+
+
+
+
+
+    <!-- CARGANDO -->
+
+    <div
+
+    class="loading"
+
+    *ngIf="loading">
+
+
+        Cargando pedidos...
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- TABLA DESKTOP -->
+
+
+    <div
+
+    class="table-container"
+
+    *ngIf="!loading">
+
+
+
+        <table>
+
+
+            <thead>
+
+                <tr>
+
+
+                    <th>
+                        Pedido
+                    </th>
+
+
+                    <th>
+                        Cliente
+                    </th>
+
+
+                    <th>
+                        Fecha
+                    </th>
+
+
+                    <th>
+                        Total
+                    </th>
+
+
+                    <th>
+                        Estado
+                    </th>
+
+
+                    <th>
+                        Acción
+                    </th>
+
+
+                </tr>
+
+
+            </thead>
+
+
+
+
+
+
+
+
+            <tbody>
+
+
+                <tr
+
+                *ngFor="let order of orders">
+
+
+
+
+
+                    <td>
+
+                        #{{order.id}}
+
+                    </td>
+
+
+
+
+
+
+
+                    <td>
+
+                        {{order.customerName || 'Cliente'}}
+
+                    </td>
+
+
+
+
+
+
+
+                    <td>
+
+                        {{formatDate(order.createdAt)}}
+
+                    </td>
+
+
+
+
+
+
+
+                    <td>
+
+                        {{order.total | number:'1.2-2'}} €
+
+                    </td>
+
+
+
+
+
+
+
+                    <td>
+
+
+
+                        <select
+
+                        class="status-select"
+
+                        [value]="order.status"
+
+                        (change)="changeStatus(order,$event)">
+
+
+
+
+
+                            <option
+
+                            *ngFor="let status of statuses"
+
+                            [value]="status">
+
+
+
+                                {{getStatusLabel(status)}}
+
+
+
+                            </option>
+
+
+
+                        </select>
+
+
+
+                    </td>
+
+
+
+
+
+
+
+
+
+                    <td>
+
+
+                        <button
+
+                        class="view"
+
+                        (click)="openDetail(order)">
+
+
+
+                            Ver
+
+
+
+                        </button>
+
+
+                    </td>
+
+
+
+
+
+
+
+                </tr>
+
+
+
+
+
+            </tbody>
+
+
+
+
+
+        </table>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- MOVIL -->
+
+
+    <div
+
+    class="mobile-orders"
+
+    *ngIf="!loading">
+
+
+
+
+
+        <article
+
+        class="order-card"
+
+        *ngFor="let order of orders">
+
+
+
+
+
+            <h2>
+
+                Pedido #{{order.id}}
+
+            </h2>
+
+
+
+
+
+
+
+            <p>
+
+                Cliente:
+
+                {{order.customerName || 'Cliente'}}
+
+            </p>
+
+
+
+
+
+
+
+            <p>
+
+                Fecha:
+
+                {{formatDate(order.createdAt)}}
+
+            </p>
+
+
+
+
+
+
+
+            <p>
+
+                Total:
+
+                {{order.total | number:'1.2-2'}} €
+
+            </p>
+
+
+
+
+
+
+
+            <label>
+
+                Estado:
+
+            </label>
+
+
+
+
+
+
+
+            <select
+
+            class="status-select"
+
+            [value]="order.status"
+
+            (change)="changeStatus(order,$event)">
+
+
+
+
+
+                <option
+
+                *ngFor="let status of statuses"
+
+                [value]="status">
+
+
+
+                    {{getStatusLabel(status)}}
+
+
+
+                </option>
+
+
+
+            </select>
+
+
+
+
+
+
+
+
+
+            <button
+
+            class="view"
+
+            (click)="openDetail(order)">
+
+
+
+                Ver detalle
+
+
+
+            </button>
+
+
+
+
+
+
+        </article>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- DETALLE PEDIDO -->
+
+
+    <div
+
+    class="detail"
+
+    *ngIf="selectedOrder">
+
+
+
+
+
+
+
+        <button
+
+        class="close"
+
+        (click)="closeDetail()">
+
+
+
+            X
+
+
+
+        </button>
+
+
+
+
+
+
+
+
+        <h2>
+
+            Pedido #{{selectedOrder.id}}
+
+        </h2>
+
+
+
+
+
+
+
+
+
+        <p>
+
+            Cliente:
+
+            {{selectedOrder.customerName}}
+
+        </p>
+
+
+
+
+
+
+
+
+
+        <p>
+
+            Fecha:
+
+            {{formatDate(selectedOrder.createdAt)}}
+
+        </p>
+
+
+
+
+
+
+
+
+
+        <p>
+
+            Estado:
+
+            <strong>
+
+                {{getStatusLabel(selectedOrder.status)}}
+
+            </strong>
+
+        </p>
+
+
+
+
+
+
+
+
+
+        <p>
+
+            Total:
+
+            {{selectedOrder.total | number:'1.2-2'}} €
+
+        </p>
+
+
+
+
+
+
+
+
+
+        <h3>
+
+            Productos
+
+        </h3>
+
+
+
+
+
+
+
+
+
+        <div
+
+        class="item"
+
+        *ngFor="let item of selectedOrder.items">
+
+
+
+
+
+
+
+            <strong>
+
+                {{item.productName}}
+
+            </strong>
+
+
+
+
+
+
+
+
+            <p>
+
+                SKU:
+
+                {{item.sku}}
+
+            </p>
+
+
+
+
+
+
+
+
+            <p>
+
+                Talla:
+
+                {{item.size}}
+
+            </p>
+
+
+
+
+
+
+
+
+            <p>
+
+                Color:
+
+                {{item.color}}
+
+            </p>
+
+
+
+
+
+
+
+
+            <p>
+
+                Cantidad:
+
+                {{item.quantity}}
+
+            </p>
+
+
+
+
+
+
+
+
+            <p>
+
+                Precio:
+
+                {{item.unitPrice | number:'1.2-2'}} €
+
+            </p>
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+</div>

@@ -1,0 +1,240 @@
+<section class="success-page">
+
+
+    <div class="success-card">
+
+
+
+        <!-- ICONO ÉXITO -->
+
+        <div class="success-icon">
+
+            ✓
+
+        </div>
+
+
+
+
+
+        <!-- MARCA -->
+
+        <span class="subtitle">
+
+            KICKZONE
+
+        </span>
+
+
+
+
+
+        <!-- TITULO -->
+
+        <h1>
+
+            ¡Compra realizada con éxito!
+
+        </h1>
+
+
+
+
+
+        <p class="message">
+
+            Gracias por confiar en nosotros.
+
+            Tu pedido ha sido recibido correctamente.
+
+            Te avisaremos cuando salga del almacén.
+
+        </p>
+
+
+
+
+
+
+
+        <!-- INFORMACIÓN PEDIDO -->
+
+
+        <div
+
+            class="order-info"
+
+            *ngIf="order">
+
+
+
+
+
+            <div class="info-box">
+
+
+
+                <span>
+
+                    Pedido
+
+                </span>
+
+
+
+
+                <strong>
+
+
+                    #{{ order.orderId || order.id }}
+
+
+                </strong>
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+            <div class="info-box">
+
+
+
+                <span>
+
+                    Total
+
+                </span>
+
+
+
+
+                <strong>
+
+
+                    {{ order.total }} €
+
+
+                </strong>
+
+
+
+            </div>
+
+
+
+
+
+
+            <div
+
+                class="info-box"
+
+                *ngIf="order.status">
+
+
+
+                <span>
+
+                    Estado
+
+                </span>
+
+
+
+                <strong>
+
+
+                    {{ order.status }}
+
+
+                </strong>
+
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- BOTONES -->
+
+
+        <div class="actions">
+
+
+
+
+
+            <a
+
+                routerLink="/products"
+
+                class="continue">
+
+
+
+                Seguir comprando
+
+
+
+            </a>
+
+
+
+
+
+
+
+            <a
+
+                routerLink="/orders"
+
+                class="orders">
+
+
+
+                Ver pedidos
+
+
+
+            </a>
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+</section>

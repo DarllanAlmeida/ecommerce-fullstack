@@ -1,0 +1,81 @@
+<h2>➕ Crear producto</h2>
+
+
+<div class="form">
+
+
+<label>
+Nombre
+</label>
+
+<input
+  type="text"
+  [(ngModel)]="product.name">
+
+
+
+<label>
+Descripción
+</label>
+
+<textarea
+  [(ngModel)]="product.description">
+</textarea>
+
+
+
+
+<label>
+Precio
+</label>
+
+<input
+  type="number"
+  [(ngModel)]="product.price">
+
+
+
+
+
+<label>
+Stock
+</label>
+
+<input
+  type="number"
+  [(ngModel)]="product.stock">
+
+
+
+
+
+<label>
+Imagen URL
+</label>
+
+<input
+  type="text"
+  [(ngModel)]="product.imageUrl"
+  placeholder="https://imagen.com/producto.jpg">
+
+
+
+
+
+<img
+  *ngIf="product.imageUrl"
+  [src]="product.imageUrl"
+  width="150">
+
+
+
+
+
+<button
+  (click)="createProduct()">
+
+  Crear producto
+
+</button>
+
+</div>

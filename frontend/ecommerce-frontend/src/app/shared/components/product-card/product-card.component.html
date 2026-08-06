@@ -1,0 +1,73 @@
+<div class="product-card">
+
+    <!-- FAVORITO -->
+
+    <button
+        class="favorite"
+        type="button">
+
+        <i class="bi bi-heart"></i>
+
+    </button>
+
+    <!-- TODA LA ZONA SUPERIOR ES CLICABLE -->
+
+    <a
+        class="product-link"
+        [routerLink]="['/products', product.id]">
+
+        <div class="image-area">
+
+            <div class="circle"></div>
+
+            <img
+                [src]="'/images/products/' + product.imageUrl"
+                [alt]="product.name">
+
+        </div>
+
+        <div class="product-info">
+
+            <span class="brand">
+
+                {{ product.brandName }}
+
+            </span>
+
+            <h3>
+
+                {{ product.name }}
+
+            </h3>
+
+            <div class="rating">
+
+                ★★★★★
+
+            </div>
+
+            <div class="price">
+
+                {{ product.price | currency:'EUR' }}
+
+            </div>
+
+        </div>
+
+    </a>
+
+    <!-- BOTÓN SEPARADO -->
+
+    <button
+        class="cart-btn"
+        type="button"
+        [disabled]="product.stock === 0"
+        (click)="addToCart()">
+
+        <i class="bi bi-bag-plus"></i>
+
+        Añadir al carrito
+
+    </button>
+
+</div>

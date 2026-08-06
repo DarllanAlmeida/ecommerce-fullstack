@@ -1,0 +1,63 @@
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.container{
+
+    width:min(var(--container),92%);
+
+    margin:auto;
+
+}
+
+/* ==========================================
+   SECTIONS
+========================================== */
+
+.section{
+
+    padding:80px 0;
+
+}
+
+/* ==========================================
+   GRID
+========================================== */
+
+.grid{
+
+    display:grid;
+
+    gap:30px;
+
+}
+
+/* ==========================================
+   FLEX
+========================================== */
+
+.flex{
+
+    display:flex;
+
+}
+
+.flex-center{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.flex-between{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}

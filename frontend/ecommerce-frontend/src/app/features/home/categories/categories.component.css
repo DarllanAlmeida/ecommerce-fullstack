@@ -1,0 +1,583 @@
+/* ===========================================
+   CATEGORIES
+===========================================*/
+
+.categories{
+
+    padding:140px 0;
+
+    background:white;
+
+}
+
+.section-header{
+
+    max-width:700px;
+
+    margin:auto;
+
+    text-align:center;
+
+    margin-bottom:80px;
+
+}
+
+.section-tag{
+
+    display:inline-flex;
+
+    padding:10px 24px;
+
+    border-radius:999px;
+
+    background:#F5F5F5;
+
+    color:#E30613;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+    margin-bottom:24px;
+
+}
+
+.section-header h2{
+
+    font-size:64px;
+
+    margin-bottom:20px;
+
+}
+
+.section-header p{
+
+    color:#777;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+/* ===========================================
+   GRID
+===========================================*/
+
+.categories-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:50px;
+
+}
+
+/* ===========================================
+   CARD
+===========================================*/
+
+.category-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:linear-gradient(
+
+        180deg,
+
+        #ffffff,
+
+        #fafafa
+
+    );
+
+    border-radius:35px;
+
+    min-height:520px;
+
+    padding:45px;
+
+    transition:.45s;
+
+    cursor:pointer;
+
+    box-shadow:
+
+        0 15px 35px rgba(0,0,0,.04);
+
+}
+
+.category-card:hover{
+
+    transform:
+
+        translateY(-12px);
+
+    box-shadow:
+
+        0 25px 60px rgba(0,0,0,.08);
+
+}
+
+/* ===========================================
+   CÍRCULOS
+===========================================*/
+
+.circle{
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+        circle,
+
+        #f8f8f8,
+
+        #ededed
+
+    );
+
+    right:-120px;
+
+    top:90px;
+
+    transition:.5s;
+
+}
+
+.circle.small{
+
+    width:250px;
+
+    height:250px;
+
+    right:40px;
+
+    top:150px;
+
+    opacity:.45;
+
+    background:white;
+
+}
+
+.category-card:hover .circle{
+
+    transform:scale(1.08);
+
+}
+
+/* ===========================================
+   CONTENIDO
+===========================================*/
+
+.category-info{
+
+    position:relative;
+
+    z-index:5;
+
+    max-width:230px;
+
+}
+
+.category-info h3{
+
+    font-family:var(--font-title);
+
+    font-size:54px;
+
+    line-height:.9;
+
+    margin-bottom:18px;
+
+    color:#111;
+
+}
+
+.category-info p{
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    color:#777;
+
+    margin-bottom:35px;
+
+}
+
+.category-info a{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#111;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.category-info a i{
+
+    color:#E30613;
+
+    transition:.35s;
+
+}
+
+.category-card:hover a{
+
+    color:#E30613;
+
+}
+
+.category-card:hover a i{
+
+    transform:translateX(8px);
+
+}
+
+/* ===========================================
+   IMAGEN
+===========================================*/
+
+.category-image{
+
+    position:absolute;
+
+    right:10px;
+
+    bottom:10px;
+
+    z-index:4;
+
+}
+
+.category-image img{
+
+    width:340px;
+
+    transition:.45s;
+
+    filter:
+
+        drop-shadow(0 20px 35px rgba(0,0,0,.12))
+
+        drop-shadow(0 40px 50px rgba(227,6,19,.08));
+
+}
+
+.category-card:hover .category-image img{
+
+    transform:
+
+        translateY(-12px)
+
+        rotate(-5deg)
+
+        scale(1.06);
+
+}
+
+/* ===========================================
+   EFECTO BRILLO
+===========================================*/
+
+.category-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+        130deg,
+
+        rgba(255,255,255,.0),
+
+        rgba(255,255,255,.55),
+
+        rgba(255,255,255,.0)
+
+    );
+
+    transform:translateX(-120%);
+
+    transition:.8s;
+
+}
+
+.category-card:hover::before{
+
+    transform:translateX(120%);
+
+}
+
+/* ===========================================
+   BORDE
+===========================================*/
+
+.category-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:35px;
+
+    border:1px solid rgba(0,0,0,.04);
+
+    pointer-events:none;
+
+}
+
+/* ===========================================
+   RESPONSIVE
+===========================================*/
+
+/* ===========================================
+   TABLET
+===========================================*/
+
+@media (max-width:1024px){
+
+    .categories{
+
+        padding:100px 20px;
+
+    }
+
+    .categories-grid{
+
+        grid-template-columns:1fr;
+
+        gap:35px;
+
+    }
+
+    .category-card{
+
+        min-height:380px;
+
+        padding:35px;
+
+    }
+
+    .category-image img{
+
+        width:260px;
+
+    }
+
+    .circle{
+
+        width:340px;
+
+        height:340px;
+
+        right:-80px;
+
+    }
+
+    .circle.small{
+
+        width:190px;
+
+        height:190px;
+
+    }
+
+}
+
+/* ===========================================
+   MOBILE
+===========================================*/
+
+@media (max-width:768px){
+
+    .categories{
+
+        padding:80px 15px;
+
+    }
+
+    .section-header{
+
+        margin-bottom:45px;
+
+    }
+
+    .section-header h2{
+
+        font-size:42px;
+
+    }
+
+    .section-header p{
+
+        font-size:16px;
+
+    }
+
+    .category-card{
+
+        min-height:320px;
+
+        padding:28px;
+
+        border-radius:24px;
+
+    }
+
+    .category-info{
+
+        max-width:170px;
+
+    }
+
+    .category-info h3{
+
+        font-size:34px;
+
+    }
+
+    .category-info p{
+
+        font-size:14px;
+
+        margin-bottom:20px;
+
+    }
+
+    .category-info a{
+
+        font-size:15px;
+
+    }
+
+    .category-image{
+
+        right:-10px;
+
+        bottom:-10px;
+
+    }
+
+    .category-image img{
+
+        width:190px;
+
+    }
+
+    .circle{
+
+        width:260px;
+
+        height:260px;
+
+        right:-60px;
+
+        top:70px;
+
+    }
+
+    .circle.small{
+
+        width:140px;
+
+        height:140px;
+
+        right:30px;
+
+        top:120px;
+
+    }
+
+}
+
+/* ===========================================
+   SMALL MOBILE
+===========================================*/
+
+@media (max-width:480px){
+
+    .categories{
+
+        padding:70px 12px;
+
+    }
+
+    .section-header h2{
+
+        font-size:34px;
+
+    }
+
+    .category-card{
+
+        min-height:290px;
+
+        padding:24px;
+
+    }
+
+    .category-info h3{
+
+        font-size:28px;
+
+    }
+
+    .category-info p{
+
+        display:none;
+
+    }
+
+    .category-image img{
+
+        width:165px;
+
+    }
+
+    .circle{
+
+        width:220px;
+
+        height:220px;
+
+    }
+
+    .circle.small{
+
+        width:110px;
+
+        height:110px;
+
+    }
+
+}

@@ -1,0 +1,185 @@
+<div class="orders-page">
+
+
+
+
+
+    <h2>
+
+        📦 Mis pedidos
+
+    </h2>
+
+
+
+
+
+
+
+    <!-- SIN PEDIDOS -->
+
+
+    <div
+
+    *ngIf="orders.length === 0"
+
+    class="empty-orders">
+
+
+        No tienes pedidos todavía.
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- PEDIDOS -->
+
+
+    <div
+
+    *ngFor="let order of orders"
+
+    class="order-card">
+
+
+
+
+
+
+
+        <div class="order-header">
+
+
+
+            <h3>
+
+
+                Pedido #{{order.id}}
+
+
+            </h3>
+
+
+
+
+            <span
+
+            class="status-badge"
+
+            [ngClass]="getStatusClass(order.status)">
+
+
+
+                {{translateStatus(order.status)}}
+
+
+
+            </span>
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="order-info">
+
+
+
+
+
+            <p>
+
+
+                📅
+
+                Fecha:
+
+                {{order.createdAt | date:'dd/MM/yyyy HH:mm'}}
+
+
+
+            </p>
+
+
+
+
+
+
+
+            <p>
+
+
+                💳
+
+                Total:
+
+
+                <strong>
+
+                    {{order.total}} €
+
+                </strong>
+
+
+
+            </p>
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <button
+
+        class="detail-btn"
+
+        (click)="viewOrder(order.id)">
+
+
+
+            Ver detalle
+
+
+
+        </button>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+</div>

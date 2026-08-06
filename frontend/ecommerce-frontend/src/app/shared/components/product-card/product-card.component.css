@@ -1,0 +1,609 @@
+/* ==========================================================
+   PRODUCT CARD PREMIUM
+========================================================== */
+
+.product-card{
+
+    position:relative;
+
+    background:#ffffff;
+
+    border-radius:32px;
+
+    overflow:hidden;
+
+    padding:28px;
+
+    transition:.4s;
+
+    box-shadow:
+
+        0 15px 35px rgba(0,0,0,.05);
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:100%;
+
+}
+
+.product-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+
+        0 25px 55px rgba(0,0,0,.10);
+
+}
+
+/* ==========================================================
+   FAVORITO
+========================================================== */
+
+.favorite{
+
+    position:absolute;
+
+    top:22px;
+
+    right:22px;
+
+    width:44px;
+
+    height:44px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#ffffff;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.08);
+
+    cursor:pointer;
+
+    z-index:20;
+
+    transition:.3s;
+
+}
+
+.favorite i{
+
+    font-size:18px;
+
+    color:#999;
+
+    transition:.3s;
+
+}
+
+.favorite:hover{
+
+    background:#E30613;
+
+}
+
+.favorite:hover i{
+
+    color:white;
+
+}
+
+/* ==========================================================
+   IMAGEN
+========================================================== */
+
+.image-area{
+
+    position:relative;
+
+    height:290px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+/* ==========================================================
+   CÍRCULO
+========================================================== */
+
+.circle{
+
+    position:absolute;
+
+    width:260px;
+
+    height:260px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+        circle,
+
+        #f8f8f8,
+
+        #ececec
+
+    );
+
+    transition:.4s;
+
+}
+
+/* ==========================================================
+   IMAGEN
+========================================================== */
+
+.image-area img{
+
+    position:relative;
+
+    z-index:5;
+
+    width:280px;
+
+    transition:.45s;
+
+    filter:
+
+        drop-shadow(0 20px 30px rgba(0,0,0,.12))
+
+        drop-shadow(0 35px 40px rgba(227,6,19,.08));
+
+}
+
+.product-card:hover .circle{
+
+    transform:scale(1.08);
+
+}
+
+.product-card:hover img{
+
+    transform:
+
+        translateY(-10px)
+
+        rotate(-5deg)
+
+        scale(1.06);
+
+}
+
+/* ==========================================================
+   INFORMACIÓN
+========================================================== */
+
+.product-info{
+
+    text-align:center;
+
+}
+
+.brand{
+
+    display:block;
+
+    color:#E30613;
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    margin-bottom:12px;
+
+}
+
+.product-info h3{
+
+    font-family:var(--font-title);
+
+    font-size:34px;
+
+    line-height:1;
+
+    margin-bottom:18px;
+
+    color:#111;
+
+}
+
+.rating{
+
+    color:#FBBF24;
+
+    font-size:18px;
+
+    margin-bottom:18px;
+
+}
+
+.price{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:#111;
+
+    margin-bottom:28px;
+
+}
+
+/* ==========================================================
+   BOTÓN
+========================================================== */
+
+.cart-btn{
+
+    width:100%;
+
+    height:56px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:#111111;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.cart-btn i{
+
+    font-size:18px;
+
+}
+
+.cart-btn:hover:not(:disabled){
+
+    background:#E30613;
+
+    transform:translateY(-3px);
+
+}
+
+.cart-btn:disabled{
+
+    background:#d1d5db;
+
+    cursor:not-allowed;
+
+}
+
+/* ==========================================================
+   BRILLO
+========================================================== */
+
+.product-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+        130deg,
+
+        rgba(255,255,255,0),
+
+        rgba(255,255,255,.55),
+
+        rgba(255,255,255,0)
+
+    );
+
+    transform:translateX(-120%);
+
+    transition:.8s;
+
+}
+
+.product-card:hover::before{
+
+    transform:translateX(120%);
+
+}
+
+/* ==========================================================
+   BORDE
+========================================================== */
+
+.product-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:32px;
+
+    border:1px solid rgba(0,0,0,.05);
+
+    pointer-events:none;
+
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media(max-width:1024px){
+
+    .product-card{
+
+        padding:24px;
+
+    }
+
+    .image-area{
+
+        height:240px;
+
+    }
+
+    .circle{
+
+        width:220px;
+
+        height:220px;
+
+    }
+
+    .image-area img{
+
+        width:230px;
+
+    }
+
+    .product-info h3{
+
+        font-size:28px;
+
+    }
+
+    .price{
+
+        font-size:30px;
+
+    }
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media(max-width:768px){
+
+    .product-card{
+
+        border-radius:24px;
+
+        padding:20px;
+
+    }
+
+    .favorite{
+
+        width:40px;
+
+        height:40px;
+
+        top:18px;
+
+        right:18px;
+
+    }
+
+    .image-area{
+
+        height:210px;
+
+        margin-bottom:20px;
+
+    }
+
+    .circle{
+
+        width:180px;
+
+        height:180px;
+
+    }
+
+    .image-area img{
+
+        width:190px;
+
+    }
+
+    .brand{
+
+        font-size:11px;
+
+    }
+
+    .product-info h3{
+
+        font-size:24px;
+
+    }
+
+    .rating{
+
+        font-size:16px;
+
+    }
+
+    .price{
+
+        font-size:26px;
+
+        margin-bottom:20px;
+
+    }
+
+    .cart-btn{
+
+        height:50px;
+
+        font-size:15px;
+
+    }
+
+}
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media(max-width:480px){
+
+    .product-card{
+
+        padding:18px;
+
+    }
+
+    .image-area{
+
+        height:180px;
+
+    }
+
+    .circle{
+
+        width:160px;
+
+        height:160px;
+
+    }
+
+    .image-area img{
+
+        width:165px;
+
+    }
+
+    .product-info h3{
+
+        font-size:22px;
+
+    }
+
+    .price{
+
+        font-size:24px;
+
+    }
+
+    .cart-btn{
+
+        height:48px;
+
+        font-size:14px;
+
+    }
+
+}
+
+/* ==========================================================
+   ANIMACIÓN
+========================================================== */
+
+@keyframes cardFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.product-card{
+
+    animation:cardFade .6s ease;
+
+}
+
+/* ==========================================
+   PRODUCT LINK
+========================================== */
+
+.product-link{
+
+    display:block;
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+.product-link:hover{
+
+    color:inherit;
+
+}
+
+.favorite{
+
+    z-index:20;
+
+}
+
+.cart-btn{
+
+    margin-top:auto;
+
+}

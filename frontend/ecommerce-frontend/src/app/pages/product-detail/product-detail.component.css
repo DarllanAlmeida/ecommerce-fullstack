@@ -1,0 +1,1139 @@
+/* ==========================================================
+   PRODUCT DETAIL PREMIUM V4
+========================================================== */
+
+
+.product-detail{
+
+    padding:60px 0;
+
+    background:#FAFAFA;
+
+}
+
+
+/* ==========================================================
+   CONTAINER
+========================================================== */
+
+
+.container{
+
+    width:min(90%,1150px);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:0.95fr 1fr;
+
+    gap:35px;
+
+    align-items:center;
+
+}
+
+
+/* ==========================================================
+   IMAGE SECTION
+========================================================== */
+
+
+.image-section{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    padding-top:40px;
+
+    min-height:420px;
+
+}
+
+
+/* ==========================================================
+   CIRCLE
+========================================================== */
+
+
+.background-circle{
+
+    position:absolute;
+
+    top:50px;
+
+    width:360px;
+
+    height:360px;
+
+    border-radius:50%;
+
+
+    background:
+
+    radial-gradient(
+
+        circle,
+
+        #ffffff,
+
+        #ededed
+
+    );
+
+
+    transition:.45s;
+
+}
+
+
+/* ==========================================================
+   IMAGE
+========================================================== */
+
+
+.image-section img{
+
+    position:relative;
+
+    z-index:5;
+
+
+    width:100%;
+
+
+    max-width:420px;
+
+
+    object-fit:contain;
+
+
+    transition:.45s;
+
+
+    filter:
+
+    drop-shadow(
+
+        0 25px 35px rgba(0,0,0,.14)
+
+    )
+
+    drop-shadow(
+
+        0 40px 50px rgba(227,6,19,.06)
+
+    );
+
+}
+
+
+
+.image-section:hover .background-circle{
+
+    transform:scale(1.06);
+
+}
+
+
+
+.image-section:hover img{
+
+
+    transform:
+
+    translateY(-8px)
+
+    rotate(-3deg)
+
+    scale(1.03);
+
+
+}
+
+
+/* ==========================================================
+   INFO
+========================================================== */
+
+
+.info-section{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+.brand{
+
+    color:#E30613;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    margin-bottom:12px;
+
+}
+
+
+.info-section h1{
+
+    font-family:var(--font-title);
+
+    font-size:48px;
+
+    line-height:1;
+
+    color:#111;
+
+    margin-bottom:15px;
+
+}
+
+
+.rating{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#FBBF24;
+
+    font-size:19px;
+
+    margin-bottom:18px;
+
+}
+
+
+.rating span{
+
+    color:#777;
+
+    font-size:14px;
+
+}
+
+
+.price{
+
+    font-size:40px;
+
+    font-weight:800;
+
+    color:#111;
+
+    margin-bottom:22px;
+
+}
+
+
+.description{
+
+    color:#666;
+
+    font-size:16px;
+
+    line-height:1.7;
+
+    margin-bottom:30px;
+
+}
+
+/* ==========================================================
+   BENEFITS
+========================================================== */
+
+
+.benefits{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-bottom:28px;
+
+}
+
+
+
+.benefits div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#4b5563;
+
+    font-size:14px;
+
+}
+
+
+
+.benefits i{
+
+    width:34px;
+
+    height:34px;
+
+    border-radius:50%;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+    background:#F2F2F2;
+
+
+    color:#E30613;
+
+
+    font-size:15px;
+
+}
+
+
+
+/* ==========================================================
+   SIZES
+========================================================== */
+
+
+.sizes{
+
+    margin-bottom:25px;
+
+}
+
+
+
+.sizes h4{
+
+    font-size:16px;
+
+    color:#111;
+
+    margin-bottom:14px;
+
+}
+
+
+
+.sizes-grid{
+
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.sizes-grid button{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:12px;
+
+
+    border:1px solid #ddd;
+
+
+    background:white;
+
+
+    color:#111;
+
+
+    font-size:14px;
+
+
+    font-weight:700;
+
+
+    cursor:pointer;
+
+
+    transition:.3s;
+
+}
+
+
+
+.sizes-grid button:hover{
+
+    border-color:#E30613;
+
+    color:#E30613;
+
+}
+
+
+
+.sizes-grid button.active{
+
+    background:#E30613;
+
+    color:white;
+
+    border-color:#E30613;
+
+}
+
+
+
+/* ==========================================================
+   QUANTITY
+========================================================== */
+
+
+.quantity{
+
+    margin-bottom:28px;
+
+}
+
+
+
+.quantity h4{
+
+    font-size:16px;
+
+    margin-bottom:12px;
+
+}
+
+
+
+.counter{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+
+
+.counter button{
+
+    width:44px;
+
+    height:44px;
+
+
+    border:none;
+
+
+    border-radius:14px;
+
+
+    background:#111;
+
+
+    color:white;
+
+
+    font-size:20px;
+
+
+    cursor:pointer;
+
+
+    transition:.3s;
+
+}
+
+
+
+.counter button:hover{
+
+    background:#E30613;
+
+}
+
+
+
+.counter span{
+
+    min-width:30px;
+
+    text-align:center;
+
+
+    font-size:20px;
+
+
+    font-weight:700;
+
+}
+
+
+
+/* ==========================================================
+   ADD CART
+========================================================== */
+
+
+.add-cart{
+
+    width:100%;
+
+
+    height:58px;
+
+
+    border:none;
+
+
+    border-radius:18px;
+
+
+    background:#111;
+
+
+    color:white;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    gap:12px;
+
+
+    font-size:16px;
+
+
+    font-weight:700;
+
+
+    cursor:pointer;
+
+
+    transition:.35s;
+
+}
+
+
+
+.add-cart i{
+
+    font-size:18px;
+
+}
+
+
+
+.add-cart:hover:not(:disabled){
+
+    background:#E30613;
+
+    transform:translateY(-3px);
+
+}
+
+
+
+.add-cart:disabled{
+
+    background:#d1d5db;
+
+    cursor:not-allowed;
+
+}
+
+
+/* ==========================================================
+   LIGHT EFFECT
+========================================================== */
+
+
+.image-section::before{
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    background:
+
+    linear-gradient(
+
+        120deg,
+
+        transparent,
+
+        rgba(255,255,255,.55),
+
+        transparent
+
+    );
+
+
+    transform:translateX(-120%);
+
+
+    transition:.8s;
+
+
+    z-index:10;
+
+}
+
+
+
+.image-section:hover::before{
+
+    transform:translateX(120%);
+
+}
+
+/* ==========================================================
+   TABLET GRANDE
+========================================================== */
+
+
+@media(max-width:1200px){
+
+
+    .container{
+
+        width:min(92%,1100px);
+
+        gap:30px;
+
+    }
+
+
+    .background-circle{
+
+        width:330px;
+
+        height:330px;
+
+    }
+
+
+    .image-section img{
+
+        max-width:380px;
+
+    }
+
+
+    .info-section h1{
+
+        font-size:42px;
+
+    }
+
+
+    .price{
+
+        font-size:36px;
+
+    }
+
+
+}
+
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+
+@media(max-width:992px){
+
+
+    .product-detail{
+
+        padding:70px 20px;
+
+    }
+
+
+
+    .container{
+
+        grid-template-columns:1fr;
+
+        width:min(90%,650px);
+
+        gap:40px;
+
+    }
+
+
+
+    .image-section{
+
+        min-height:350px;
+
+        align-items:center;
+
+        padding-top:0;
+
+    }
+
+
+
+    .background-circle{
+
+        width:300px;
+
+        height:300px;
+
+        top:auto;
+
+    }
+
+
+
+    .image-section img{
+
+        max-width:330px;
+
+    }
+
+
+
+    .info-section{
+
+        text-align:center;
+
+        align-items:center;
+
+    }
+
+
+
+    .rating{
+
+        justify-content:center;
+
+    }
+
+
+
+    .benefits{
+
+        width:100%;
+
+        max-width:420px;
+
+        text-align:left;
+
+    }
+
+
+
+    .sizes-grid{
+
+        justify-content:center;
+
+    }
+
+
+
+    .counter{
+
+        justify-content:center;
+
+    }
+
+
+
+}
+
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+
+@media(max-width:768px){
+
+
+    .product-detail{
+
+        padding:50px 15px;
+
+    }
+
+
+
+    .container{
+
+        width:100%;
+
+    }
+
+
+
+    .image-section{
+
+        min-height:280px;
+
+    }
+
+
+
+    .background-circle{
+
+        width:230px;
+
+        height:230px;
+
+    }
+
+
+
+    .image-section img{
+
+        max-width:240px;
+
+    }
+
+
+
+    .brand{
+
+        font-size:11px;
+
+        letter-spacing:3px;
+
+    }
+
+
+
+    .info-section h1{
+
+        font-size:32px;
+
+    }
+
+
+
+    .rating{
+
+        flex-direction:column;
+
+        gap:6px;
+
+        font-size:17px;
+
+    }
+
+
+
+    .price{
+
+        font-size:30px;
+
+    }
+
+
+
+    .description{
+
+        font-size:15px;
+
+    }
+
+
+
+    .benefits div{
+
+        font-size:13px;
+
+    }
+
+
+
+    .sizes-grid button{
+
+        width:44px;
+
+        height:44px;
+
+    }
+
+
+
+    .counter button{
+
+        width:40px;
+
+        height:40px;
+
+    }
+
+
+
+    .add-cart{
+
+        height:54px;
+
+        font-size:15px;
+
+    }
+
+
+}
+
+.category{
+
+    display:block;
+
+    color:#666;
+
+    font-size:14px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.stock{
+
+    color:#16a34a;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.stock.out{
+
+    color:#dc2626;
+
+}
+
+
+
+.cart-message{
+
+    margin-top:15px;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    background:#dcfce7;
+
+    color:#166534;
+
+    text-align:center;
+
+    font-weight:700;
+
+}
+
+.product-actions{
+
+    display:flex;
+
+    gap:15px;
+
+    align-items:center;
+
+}
+
+
+
+.favorite{
+
+    width:56px;
+
+    height:56px;
+
+    border-radius:50%;
+
+    border:1px solid #ddd;
+
+    background:white;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+.favorite:hover{
+
+    color:#E30613;
+
+    border-color:#E30613;
+
+}
+
+
+
+.favorite .bi-heart-fill{
+
+    color:#E30613;
+
+}
+
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+
+@media(max-width:480px){
+
+
+    .background-circle{
+
+        width:200px;
+
+        height:200px;
+
+    }
+
+
+
+    .image-section img{
+
+        max-width:200px;
+
+    }
+
+
+
+    .info-section h1{
+
+        font-size:28px;
+
+    }
+
+
+
+    .price{
+
+        font-size:26px;
+
+    }
+
+
+
+    .sizes-grid{
+
+        gap:8px;
+
+    }
+
+
+
+    .sizes-grid button{
+
+        width:40px;
+
+        height:40px;
+
+        font-size:13px;
+
+    }
+
+
+
+}
+
+
+
+/* ==========================================================
+   ENTRY ANIMATION
+========================================================== */
+
+
+@keyframes productAppear{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+
+}
+
+
+
+.image-section{
+
+    animation:productAppear .7s ease;
+
+}
+
+
+
+.info-section{
+
+    animation:productAppear .9s ease;
+
+}

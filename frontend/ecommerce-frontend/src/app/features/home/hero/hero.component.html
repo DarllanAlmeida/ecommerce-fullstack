@@ -1,0 +1,180 @@
+<section
+    class="hero"
+    *ngIf="products.length">
+
+    <div class="container hero-container">
+
+        <!-- ==========================
+             IZQUIERDA
+        =========================== -->
+
+        <div class="hero-content fade-in">
+
+            <span class="hero-tag">
+
+                NEW COLLECTION 2026
+
+            </span>
+
+            <h1>
+
+                MOVE WITHOUT LIMITS
+
+            </h1>
+
+            <p>
+
+                Descubre la nueva colección de zapatillas de
+                Nike, Adidas, Puma y New Balance.
+                Tecnología, comodidad y diseño para superar
+                cada reto.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    class="btn btn-primary"
+                    [routerLink]="['/products', products[current].id]">
+
+                    Comprar ahora
+
+                </a>
+
+                <a
+                    routerLink="/products"
+                    class="btn btn-outline">
+
+                    Ver catálogo
+
+                </a>
+
+            </div>
+
+            <div class="hero-benefits">
+
+                <div>
+
+                    <i class="bi bi-truck"></i>
+
+                    <span>
+
+                        Envío gratuito desde 50 €
+
+                    </span>
+
+                </div>
+
+                <div>
+
+                    <i class="bi bi-arrow-repeat"></i>
+
+                    <span>
+
+                        Devolución en 30 días
+
+                    </span>
+
+                </div>
+
+                <div>
+
+                    <i class="bi bi-shield-check"></i>
+
+                    <span>
+
+                        Compra 100% segura
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ==========================
+             DERECHA
+        =========================== -->
+
+        <div class="hero-image fade-in">
+
+            <!-- CÍRCULO -->
+
+            <div class="hero-circle"></div>
+
+            <!-- DETALLE ROJO -->
+
+            <div class="hero-accent"></div>
+
+            <!-- FLECHA -->
+
+            <button
+                class="hero-arrow left"
+                (click)="previous()">
+
+                <i class="bi bi-chevron-left"></i>
+
+            </button>
+
+            <!-- IMAGEN -->
+
+            <img
+                [src]="'/images/products/' + products[current].imageUrl"
+                [alt]="products[current].name">
+
+            <!-- FLECHA -->
+
+            <button
+                class="hero-arrow right"
+                (click)="next()">
+
+                <i class="bi bi-chevron-right"></i>
+
+            </button>
+
+            <!-- INFORMACIÓN -->
+
+            <div class="hero-product">
+
+                <span class="brand">
+
+                    {{ products[current].brandName }}
+
+                </span>
+
+                <h2>
+
+                    {{ products[current].name }}
+
+                </h2>
+
+                <h3>
+
+                    {{ products[current].price | currency:'EUR' }}
+
+                </h3>
+
+            </div>
+
+            <!-- INDICADORES -->
+
+            <div class="dots">
+
+                <span
+
+                    *ngFor="let product of products; let i=index"
+
+                    (click)="goTo(i)"
+
+                    [class.active]="i===current">
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

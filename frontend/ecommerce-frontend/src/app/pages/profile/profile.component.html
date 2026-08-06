@@ -1,0 +1,315 @@
+<section class="profile-page">
+
+
+<div class="profile-container">
+
+
+<div class="profile-card">
+
+
+
+    <!-- AVATAR -->
+
+
+    <div class="avatar">
+
+
+        <img
+
+        *ngIf="profile.image"
+
+        [src]="profile.image">
+
+
+
+        <i
+
+        *ngIf="!profile.image"
+
+        class="bi bi-person">
+
+
+        </i>
+
+
+    </div>
+
+
+
+
+
+    <h1>
+
+        Mi perfil
+
+    </h1>
+
+
+
+
+
+
+
+    <!-- VISUAL -->
+
+
+    <div *ngIf="!editing">
+
+
+
+        <h2>
+
+            {{profile.name}}
+
+        </h2>
+
+
+
+
+        <div class="info-box">
+
+
+            <span>
+
+                EMAIL
+
+            </span>
+
+
+            <p>
+
+                {{profile.email}}
+
+            </p>
+
+
+        </div>
+
+
+
+
+
+        <div class="info-box">
+
+
+            <span>
+
+                TELÉFONO
+
+            </span>
+
+
+            <p>
+
+                {{profile.phone}}
+
+            </p>
+
+
+        </div>
+
+
+
+
+
+        <div class="info-box">
+
+
+            <span>
+
+                DIRECCIÓN
+
+            </span>
+
+
+            <p>
+
+                {{profile.address}}
+
+            </p>
+
+
+        </div>
+
+
+
+
+
+        <button
+
+        class="primary-btn"
+
+        (click)="toggleEdit()">
+
+
+
+            ✏️ Editar perfil
+
+
+
+        </button>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <!-- EDITAR -->
+
+
+    <div *ngIf="editing">
+
+
+
+
+
+        <div class="form-group">
+
+
+            <label>
+
+                Foto de perfil
+
+            </label>
+
+
+            <input
+
+            type="file"
+
+            accept="image/jpeg,image/png"
+
+            (change)="changeImage($event)">
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <div class="form-group">
+
+
+            <label>
+
+                Nombre
+
+            </label>
+
+
+            <input
+
+            [(ngModel)]="profile.name">
+
+
+        </div>
+
+
+
+
+
+
+        <div class="form-group">
+
+
+            <label>
+
+                Teléfono
+
+            </label>
+
+
+            <input
+
+            [(ngModel)]="profile.phone">
+
+
+        </div>
+
+
+
+
+
+
+        <div class="form-group">
+
+
+            <label>
+
+                Dirección
+
+            </label>
+
+
+            <input
+
+            [(ngModel)]="profile.address">
+
+
+        </div>
+
+
+
+
+
+
+
+        <button
+
+        class="primary-btn"
+
+        (click)="saveProfile()">
+
+
+
+            💾 Guardar cambios
+
+
+
+        </button>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <div class="profile-links">
+
+
+        <a routerLink="/orders">
+
+
+            📦 Mis pedidos
+
+
+        </a>
+
+
+    </div>
+
+
+
+
+</div>
+
+
+</div>
+
+
+</section>

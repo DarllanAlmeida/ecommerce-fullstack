@@ -1,0 +1,502 @@
+<section
+class="product-detail"
+*ngIf="!loading && product">
+
+
+<div class="container">
+
+
+
+    <!-- IMAGEN -->
+
+    <div class="image-section">
+
+
+        <div class="background-circle"></div>
+
+
+        <img
+        [src]="'/images/products/' + product.imageUrl"
+        [alt]="product.name">
+
+
+    </div>
+
+
+
+
+
+
+
+    <!-- INFORMACIÓN -->
+
+    <div class="info-section">
+
+
+
+        <span class="brand">
+
+            {{product.brandName}}
+
+        </span>
+
+
+
+
+
+        <span class="category">
+
+            {{product.categoryName}}
+
+        </span>
+
+
+
+
+
+
+        <h1>
+
+            {{product.name}}
+
+        </h1>
+
+
+
+
+
+
+
+        <!-- RATING -->
+
+        <div class="rating">
+
+
+            ★★★★★
+
+
+            <span>
+
+                4.9 (128 opiniones)
+
+            </span>
+
+
+        </div>
+
+
+
+
+
+
+
+        <!-- PRECIO -->
+
+        <div class="price">
+
+            {{product.price | currency:'EUR'}}
+
+        </div>
+
+
+
+
+
+
+
+
+        <!-- STOCK -->
+
+        <div class="stock">
+
+
+
+            <i class="bi bi-check-circle"></i>
+
+
+
+
+            <span *ngIf="selectedVariantId">
+
+                Stock disponible:
+
+                {{getSelectedStock()}}
+
+                unidades
+
+            </span>
+
+
+
+            <span *ngIf="!selectedVariantId">
+
+                Selecciona una talla
+
+            </span>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- DESCRIPCIÓN -->
+
+
+        <p class="description">
+
+
+            {{product.description}}
+
+
+        </p>
+
+
+
+
+
+
+
+
+
+        <!-- BENEFICIOS -->
+
+
+        <div class="benefits">
+
+
+            <div>
+
+                <i class="bi bi-truck"></i>
+
+
+                <span>
+
+                    Envío gratuito desde 50 €
+
+                </span>
+
+
+            </div>
+
+
+
+
+
+            <div>
+
+                <i class="bi bi-arrow-repeat"></i>
+
+
+                <span>
+
+                    Devolución gratuita durante 30 días
+
+                </span>
+
+
+            </div>
+
+
+
+
+
+            <div>
+
+                <i class="bi bi-shield-check"></i>
+
+
+                <span>
+
+                    Compra 100% segura
+
+                </span>
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- TALLAS DESDE BACKEND -->
+
+
+        <div class="sizes">
+
+
+
+            <h4>
+
+                Selecciona tu talla
+
+            </h4>
+
+
+
+
+
+            <div class="sizes-grid">
+
+
+
+                <button
+
+
+                *ngFor="let variant of product.variants"
+
+
+                (click)="selectVariant(variant)"
+
+
+                [class.active]="selectedVariantId === variant.id"
+
+
+                [disabled]="variant.stock === 0">
+
+
+
+                    {{variant.size}}
+
+
+
+                </button>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- CANTIDAD -->
+
+
+        <div class="quantity">
+
+
+
+            <h4>
+
+                Cantidad
+
+            </h4>
+
+
+
+
+
+            <div class="counter">
+
+
+
+                <button
+
+                (click)="decrease()">
+
+
+                    −
+
+
+                </button>
+
+
+
+
+
+                <span>
+
+                    {{quantity}}
+
+                </span>
+
+
+
+
+
+                <button
+
+                (click)="increase()">
+
+
+
+                    +
+
+
+                </button>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- ACCIONES -->
+
+
+        <div class="product-actions">
+
+
+
+
+
+            <!-- FAVORITOS -->
+
+
+            <button
+
+            class="favorite"
+
+            (click)="toggleFavorite()">
+
+
+
+                <i
+
+                class="bi"
+
+                [class.bi-heart]="!isFavorite"
+
+                [class.bi-heart-fill]="isFavorite">
+
+                </i>
+
+
+
+            </button>
+
+
+
+
+
+
+
+
+
+            <!-- CARRITO -->
+
+
+            <button
+
+            class="add-cart"
+
+
+            [disabled]="!selectedVariantId"
+
+
+            (click)="addToCart()">
+
+
+
+                <i class="bi bi-bag-plus"></i>
+
+
+
+                Añadir al carrito
+
+
+
+            </button>
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- MENSAJE -->
+
+
+        <div
+
+        class="cart-message"
+
+        *ngIf="cartMessage">
+
+
+            ✓ {{cartMessage}}
+
+
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- LOADING -->
+
+
+<div
+
+class="loading"
+
+*ngIf="loading">
+
+
+    Cargando producto...
+
+
+</div>

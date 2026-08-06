@@ -1,0 +1,492 @@
+/* =====================================================
+   ORDER DETAIL PREMIUM
+===================================================== */
+
+
+.order-detail-page{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:120px 20px;
+
+    background:#fafafa;
+
+}
+
+
+
+
+
+/* HEADER */
+
+
+.order-header{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.06);
+
+}
+
+
+
+.order-header h2{
+
+    font-size:32px;
+
+    font-weight:900;
+
+    color:#111;
+
+}
+
+
+
+.order-header p{
+
+    color:#777;
+
+}
+
+
+
+
+
+
+/* STATUS */
+
+
+.status-badge{
+
+    background:#111;
+
+    color:white;
+
+    padding:12px 25px;
+
+    border-radius:999px;
+
+    font-weight:800;
+
+}
+
+
+
+
+
+
+
+
+
+/* SECTIONS */
+
+
+section{
+
+    background:white;
+
+    margin-top:30px;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.05);
+
+}
+
+
+
+
+
+section h3{
+
+    font-size:24px;
+
+    margin-bottom:30px;
+
+    font-weight:900;
+
+}
+
+
+
+
+
+
+
+
+
+/* TIMELINE */
+
+
+.timeline{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    position:relative;
+
+    margin:50px 0;
+
+}
+
+
+
+
+
+.timeline:before{
+
+
+    content:'';
+
+    position:absolute;
+
+    top:22px;
+
+    left:10%;
+
+    right:10%;
+
+    height:4px;
+
+    background:#ddd;
+
+
+}
+
+
+
+
+
+.step{
+
+    position:relative;
+
+    z-index:2;
+
+    flex:1;
+
+    text-align:center;
+
+}
+
+
+
+
+
+.circle{
+
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    background:#ddd;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:auto;
+
+    font-weight:900;
+
+}
+
+
+
+
+
+.circle.completed{
+
+
+    background:#22c55e;
+
+
+}
+
+
+
+
+
+.step span{
+
+
+    display:block;
+
+    margin-top:15px;
+
+    font-weight:700;
+
+    font-size:14px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* CANCELADO */
+
+
+.cancelled{
+
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    font-size:20px;
+
+    font-weight:900;
+
+    text-align:center;
+
+}
+
+
+
+
+
+
+
+
+
+/* PRODUCTOS */
+
+
+.product-item{
+
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:20px 0;
+
+    border-bottom:1px solid #eee;
+
+
+}
+
+
+
+.product-item h4{
+
+
+    font-size:20px;
+
+    margin-bottom:10px;
+
+
+}
+
+
+
+
+
+
+
+/* TOTAL */
+
+
+.total-box{
+
+
+    background:#111;
+
+    color:white;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    margin-top:30px;
+
+    text-align:right;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* HISTORIAL */
+
+
+.history-item{
+
+
+    padding:20px;
+
+    border-left:4px solid #E30613;
+
+    background:#fafafa;
+
+    margin-bottom:15px;
+
+    border-radius:10px;
+
+
+}
+
+
+
+
+
+.history-item strong{
+
+
+    font-size:18px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* MOBILE */
+
+
+@media(max-width:768px){
+
+
+
+.order-header{
+
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:20px;
+
+
+}
+
+
+
+
+
+.timeline{
+
+
+    flex-direction:column;
+
+    gap:35px;
+
+
+}
+
+
+
+
+.timeline:before{
+
+
+    top:20px;
+
+    bottom:20px;
+
+    left:22px;
+
+    width:4px;
+
+    height:auto;
+
+
+}
+
+
+
+
+
+.step{
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    text-align:left;
+
+
+}
+
+
+
+
+
+.circle{
+
+
+    margin:0;
+
+
+}
+
+
+
+.step span{
+
+
+    margin:0;
+
+
+}
+
+
+
+
+
+section{
+
+
+    padding:25px;
+
+
+}
+
+
+}

@@ -1,0 +1,582 @@
+<div class="products-admin">
+
+
+
+
+
+    <div class="header">
+
+
+        <h1>
+            Productos
+        </h1>
+
+
+
+
+        <a
+
+        routerLink="/admin/products/create"
+
+        class="new-product">
+
+
+            + Nuevo producto
+
+
+        </a>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- LOADING -->
+
+
+    <div
+
+    class="loading"
+
+    *ngIf="loading">
+
+
+        Cargando productos...
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- DESKTOP -->
+
+
+    <div
+
+    class="table-container"
+
+    *ngIf="!loading">
+
+
+
+
+
+
+        <table>
+
+
+
+            <thead>
+
+
+                <tr>
+
+
+                    <th>
+                        Imagen
+                    </th>
+
+
+                    <th>
+                        Producto
+                    </th>
+
+
+                    <th>
+                        Marca
+                    </th>
+
+
+                    <th>
+                        Categoría
+                    </th>
+
+
+                    <th>
+                        Precio
+                    </th>
+
+
+                    <th>
+                        Stock
+                    </th>
+
+
+                    <th>
+                        Variantes
+                    </th>
+
+
+                    <th>
+                        Acciones
+                    </th>
+
+
+
+                </tr>
+
+
+            </thead>
+
+
+
+
+
+
+
+
+
+            <tbody>
+
+
+
+                <tr
+
+                *ngFor="let product of products">
+
+
+
+
+
+
+                    <td>
+
+
+
+                        <img
+
+                        [src]="'/images/products/' + product.imageUrl"
+
+                        [alt]="product.name">
+
+
+
+                    </td>
+
+
+
+
+
+
+
+
+
+                    <td>
+
+
+                        <strong>
+
+                            {{product.name}}
+
+                        </strong>
+
+
+
+                        <p>
+
+                            {{product.description}}
+
+                        </p>
+
+
+
+                    </td>
+
+
+
+
+
+
+
+
+
+                    <td>
+
+
+                        {{product.brandName}}
+
+
+                    </td>
+
+
+
+
+
+
+
+
+
+                    <td>
+
+
+                        {{product.categoryName}}
+
+
+                    </td>
+
+
+
+
+
+
+
+
+
+                    <td>
+
+
+                        {{product.price | number:'1.2-2'}} €
+
+
+                    </td>
+
+
+
+
+
+
+
+
+
+                    <td>
+
+
+                        {{product.stock}}
+
+
+                    </td>
+
+
+
+
+
+
+
+
+
+                    <td>
+
+
+                        {{getVariantCount(product)}}
+
+
+                    </td>
+
+
+
+
+
+
+
+
+
+                    <td class="actions">
+
+
+
+
+
+                        <a
+
+                        [routerLink]="['/admin/products/edit',product.id]"
+
+                        class="edit">
+
+
+                            Editar
+
+
+                        </a>
+
+
+
+
+
+
+
+
+                        <button
+
+                        class="delete"
+
+                        (click)="deleteProduct(product.id)">
+
+
+
+                            Eliminar
+
+
+
+                        </button>
+
+
+
+
+
+                    </td>
+
+
+
+
+
+
+                </tr>
+
+
+
+
+
+
+            </tbody>
+
+
+
+
+
+        </table>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- MOVIL -->
+
+
+
+    <div
+
+    class="mobile-products"
+
+    *ngIf="!loading">
+
+
+
+
+
+
+        <article
+
+        class="product-card"
+
+        *ngFor="let product of products">
+
+
+
+
+
+
+
+            <img
+
+            [src]="'/images/products/' + product.imageUrl"
+
+            [alt]="product.name">
+
+
+
+
+
+
+
+            <h2>
+
+                {{product.name}}
+
+            </h2>
+
+
+
+
+
+
+
+
+            <p>
+
+                <strong>
+                    Marca:
+                </strong>
+
+                {{product.brandName}}
+
+            </p>
+
+
+
+
+
+
+
+
+            <p>
+
+                <strong>
+                    Categoría:
+                </strong>
+
+                {{product.categoryName}}
+
+            </p>
+
+
+
+
+
+
+
+
+            <p>
+
+                <strong>
+                    Precio:
+                </strong>
+
+                {{product.price | number:'1.2-2'}} €
+
+            </p>
+
+
+
+
+
+
+
+
+            <p>
+
+                <strong>
+                    Stock:
+                </strong>
+
+                {{product.stock}}
+
+            </p>
+
+
+
+
+
+
+
+
+            <p>
+
+                <strong>
+                    Variantes:
+                </strong>
+
+                {{getVariantCount(product)}}
+
+            </p>
+
+
+
+
+
+
+
+
+
+            <div class="actions">
+
+
+
+
+
+                <a
+
+                [routerLink]="['/admin/products/edit',product.id]"
+
+                class="edit">
+
+
+                    Editar
+
+
+                </a>
+
+
+
+
+
+
+
+
+
+                <button
+
+                class="delete"
+
+                (click)="deleteProduct(product.id)">
+
+
+
+                    Eliminar
+
+
+
+                </button>
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+        </article>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+</div>

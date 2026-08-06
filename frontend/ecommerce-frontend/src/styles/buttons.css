@@ -1,0 +1,123 @@
+/* ==========================================
+   BUTTON SYSTEM
+========================================== */
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:14px 28px;
+
+    border:none;
+
+    border-radius:var(--radius-md);
+
+    font-family:var(--font-body);
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+/* ==========================================
+   PRIMARY
+========================================== */
+
+.btn-primary{
+
+    background:var(--accent);
+
+    color:var(--text-white);
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:var(--shadow-md);
+
+    background:#c90400;
+
+}
+
+/* ==========================================
+   SECONDARY
+========================================== */
+
+.btn-secondary{
+
+    background:var(--primary);
+
+    color:var(--text-white);
+
+}
+
+.btn-secondary:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+/* ==========================================
+   OUTLINE
+========================================== */
+
+.btn-outline{
+
+    background:transparent;
+
+    border:2px solid var(--primary);
+
+    color:var(--primary);
+
+}
+
+.btn-outline:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+/* ==========================================
+   GHOST
+========================================== */
+
+.btn-ghost{
+
+    background:transparent;
+
+    color:var(--primary);
+
+}
+
+.btn-ghost:hover{
+
+    background:var(--surface);
+
+}
+
+/* ==========================================
+   FULL WIDTH
+========================================== */
+
+.btn-block{
+
+    width:100%;
+
+}

@@ -1,0 +1,991 @@
+/* ==========================================================
+   PRODUCTS PAGE PREMIUM V2
+========================================================== */
+
+
+.products-page{
+
+    width:min(90%,1400px);
+
+    margin:70px auto;
+
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+
+.page-header{
+
+    text-align:center;
+
+    margin-bottom:55px;
+
+}
+
+
+
+.subtitle{
+
+    color:#E30613;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+}
+
+
+
+.page-header h1{
+
+    font-family:var(--font-title);
+
+    font-size:58px;
+
+    line-height:1;
+
+    color:#111;
+
+    margin:15px 0;
+
+}
+
+
+
+.page-header p{
+
+    color:#6b7280;
+
+    font-size:18px;
+
+}
+
+
+
+/* ==========================================================
+   FILTER CARD
+========================================================== */
+
+
+.filters-card{
+
+
+    background:#FAFAFA;
+
+
+    border-radius:30px;
+
+
+    padding:35px;
+
+
+    margin-bottom:45px;
+
+
+    box-shadow:
+
+    0 20px 50px rgba(0,0,0,.06);
+
+
+}
+
+
+
+/* ==========================================================
+   SEARCH + SORT
+========================================================== */
+
+
+.filters-top{
+
+
+    display:flex;
+
+
+    gap:25px;
+
+
+    align-items:flex-end;
+
+
+    margin-bottom:35px;
+
+
+}
+
+
+
+.search-box{
+
+
+    flex:1;
+
+}
+
+
+
+.search-box input{
+
+
+    width:100%;
+
+
+    height:58px;
+
+
+    padding:0 25px;
+
+
+    border-radius:30px;
+
+
+    border:1px solid #e5e7eb;
+
+
+    background:white;
+
+
+    font-size:16px;
+
+
+    outline:none;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.search-box input:focus{
+
+
+    border-color:#111;
+
+
+    box-shadow:
+
+    0 0 0 4px rgba(0,0,0,.05);
+
+
+}
+
+
+
+.sort-box{
+
+
+    width:230px;
+
+
+}
+
+
+
+.sort-box label{
+
+
+    display:block;
+
+
+    margin-bottom:10px;
+
+
+    font-size:14px;
+
+
+    font-weight:700;
+
+
+    color:#111;
+
+
+}
+
+
+
+.sort-box select{
+
+
+    width:100%;
+
+
+    height:58px;
+
+
+    border-radius:30px;
+
+
+    border:1px solid #e5e7eb;
+
+
+    background:white;
+
+
+    padding:0 20px;
+
+
+    cursor:pointer;
+
+
+    font-size:15px;
+
+
+}
+
+/* ==========================================================
+   FILTER GROUPS
+========================================================== */
+
+
+.filter-group{
+
+    margin-bottom:28px;
+
+}
+
+
+
+.filter-group h3{
+
+    font-size:15px;
+
+    font-weight:800;
+
+    color:#111;
+
+    margin-bottom:15px;
+
+}
+
+
+
+/* ==========================================================
+   CHIPS PREMIUM
+========================================================== */
+
+
+.chips{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+}
+
+
+
+.chips button{
+
+
+    padding:11px 24px;
+
+
+    border-radius:999px;
+
+
+    border:1px solid #ddd;
+
+
+    background:white;
+
+
+    color:#222;
+
+
+    font-size:14px;
+
+
+    font-weight:600;
+
+
+    cursor:pointer;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.chips button:hover{
+
+
+    border-color:#111;
+
+
+    transform:translateY(-2px);
+
+
+}
+
+
+
+.chips button.active{
+
+
+    background:#111;
+
+
+    color:white;
+
+
+    border-color:#111;
+
+
+}
+
+
+
+/* ==========================================================
+   FILTER FOOTER
+========================================================== */
+
+
+.filters-footer{
+
+
+    margin-top:30px;
+
+
+    padding-top:25px;
+
+
+    border-top:1px solid #e5e7eb;
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    align-items:center;
+
+
+}
+
+
+
+.results{
+
+
+    color:#6b7280;
+
+
+    font-size:15px;
+
+
+}
+
+
+
+.results strong{
+
+
+    color:#E30613;
+
+
+    font-size:18px;
+
+
+}
+
+
+
+/* ==========================================================
+   CLEAR BUTTON
+========================================================== */
+
+
+.clear-btn{
+
+
+    background:#E30613;
+
+
+    color:white;
+
+
+    border:none;
+
+
+    padding:12px 22px;
+
+
+    border-radius:999px;
+
+
+    font-size:14px;
+
+
+    font-weight:700;
+
+
+    cursor:pointer;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.clear-btn:hover{
+
+
+    background:#111;
+
+
+    transform:translateY(-2px);
+
+
+}
+
+
+
+/* ==========================================================
+   TOP ACTIONS
+========================================================== */
+
+
+.top-actions{
+
+
+    display:flex;
+
+
+    justify-content:flex-end;
+
+
+    gap:15px;
+
+
+    margin-bottom:35px;
+
+
+}
+
+
+
+.top-actions button{
+
+
+    border:none;
+
+
+    padding:14px 28px;
+
+
+    border-radius:999px;
+
+
+    background:#111;
+
+
+    color:white;
+
+
+    font-size:15px;
+
+
+    font-weight:700;
+
+
+    cursor:pointer;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.top-actions button:last-child{
+
+
+    background:#E30613;
+
+
+}
+
+
+
+.top-actions button:hover{
+
+
+    transform:translateY(-3px);
+
+
+}
+
+
+
+/* ==========================================================
+   PRODUCTS GRID
+========================================================== */
+
+
+.products-grid{
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(300px,1fr));
+
+
+    gap:35px;
+
+
+}
+
+
+
+/* ==========================================================
+   LOADING ERROR
+========================================================== */
+
+
+.loading,
+.error{
+
+
+    text-align:center;
+
+
+    margin:60px 0;
+
+
+    font-size:20px;
+
+
+}
+
+
+
+.loading{
+
+
+    color:#E30613;
+
+
+}
+
+
+
+.error{
+
+
+    color:#dc2626;
+
+
+}
+
+
+
+/* ==========================================================
+   EMPTY STATE
+========================================================== */
+
+
+.no-results{
+
+
+    text-align:center;
+
+
+    padding:80px 20px;
+
+
+}
+
+
+
+.no-results h2{
+
+
+    color:#111;
+
+
+    margin-bottom:15px;
+
+
+}
+
+
+
+.no-results p{
+
+
+    color:#6b7280;
+
+
+    margin-bottom:25px;
+
+
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+
+@media(max-width:1100px){
+
+
+    .products-page{
+
+        width:min(92%,100%);
+
+    }
+
+
+
+    .page-header h1{
+
+        font-size:48px;
+
+    }
+
+
+
+    .filters-card{
+
+        padding:30px;
+
+    }
+
+
+
+    .products-grid{
+
+        grid-template-columns:
+
+        repeat(2,1fr);
+
+        gap:30px;
+
+    }
+
+
+}
+
+
+
+/* ==========================================================
+   TABLET PEQUEÑA
+========================================================== */
+
+
+@media(max-width:900px){
+
+
+    .filters-top{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+
+
+    .sort-box{
+
+        width:100%;
+
+    }
+
+
+
+    .filters-footer{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+
+
+    .top-actions{
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+    }
+
+
+}
+
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+
+@media(max-width:768px){
+
+
+    .products-page{
+
+
+        width:100%;
+
+
+        padding:0 15px;
+
+
+        margin:50px auto;
+
+
+    }
+
+
+
+    .page-header{
+
+
+        margin-bottom:40px;
+
+
+    }
+
+
+
+    .page-header h1{
+
+
+        font-size:36px;
+
+
+    }
+
+
+
+    .page-header p{
+
+
+        font-size:16px;
+
+
+    }
+
+
+
+    .filters-card{
+
+
+        padding:22px;
+
+
+        border-radius:24px;
+
+
+    }
+
+
+
+    .search-box input{
+
+
+        height:52px;
+
+
+        font-size:14px;
+
+
+    }
+
+
+
+    .sort-box select{
+
+
+        height:52px;
+
+
+    }
+
+
+
+    .chips{
+
+
+        gap:8px;
+
+
+    }
+
+
+
+    .chips button{
+
+
+        padding:10px 18px;
+
+
+        font-size:13px;
+
+
+    }
+
+
+
+    .filters-footer{
+
+
+        gap:20px;
+
+
+    }
+
+
+
+    .clear-btn{
+
+
+        width:100%;
+
+
+        text-align:center;
+
+
+    }
+
+
+
+    .top-actions{
+
+
+        flex-direction:column;
+
+
+        width:100%;
+
+
+    }
+
+
+
+    .top-actions button{
+
+
+        width:100%;
+
+
+    }
+
+
+
+    .products-grid{
+
+
+        grid-template-columns:1fr;
+
+
+        gap:25px;
+
+
+    }
+
+
+}
+
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+
+@media(max-width:480px){
+
+
+    .page-header h1{
+
+
+        font-size:30px;
+
+
+    }
+
+
+
+    .subtitle{
+
+
+        font-size:11px;
+
+
+        letter-spacing:3px;
+
+
+    }
+
+
+
+    .filters-card{
+
+
+        padding:18px;
+
+
+        border-radius:20px;
+
+
+    }
+
+
+
+    .filter-group h3{
+
+
+        font-size:14px;
+
+
+    }
+
+
+
+    .chips button{
+
+
+        padding:9px 15px;
+
+
+        border-radius:999px;
+
+
+    }
+
+
+
+    .products-grid{
+
+
+        gap:20px;
+
+
+    }
+
+
+}

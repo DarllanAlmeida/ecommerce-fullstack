@@ -1,0 +1,42 @@
+# =====================
+# BACKEND SPRING BOOT
+# =====================
+
+backend/target/
+
+backend/.idea/
+
+backend/*.log
+
+
+# No subir configuraciones con claves
+backend/src/main/resources/application.properties
+
+
+# =====================
+# FRONTEND ANGULAR
+# =====================
+
+frontend/node_modules/
+
+frontend/dist/
+
+frontend/.angular/
+
+
+# =====================
+# IDE
+# =====================
+
+.idea/
+
+*.iml
+
+
+# =====================
+# SISTEMA
+# =====================
+
+.DS_Store
+
+Thumbs.db

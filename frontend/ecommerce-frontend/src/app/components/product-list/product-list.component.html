@@ -1,0 +1,253 @@
+<section class="products-page">
+
+    <div class="page-header">
+
+        <span class="subtitle">
+
+            SNEAKERS SHOP
+
+        </span>
+
+        <h1>
+
+            Catálogo de Productos
+
+        </h1>
+
+        <p>
+
+            Descubre nuestra colección de zapatillas deportivas.
+
+        </p>
+
+    </div>
+
+    <!-- PANEL DE FILTROS -->
+
+    <div class="filters-card">
+
+        <!-- BUSCADOR + ORDENAR -->
+
+        <div class="filters-top">
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    placeholder="🔍 Buscar zapatillas, marcas o categorías..."
+                    [(ngModel)]="search"
+                    (input)="filterProducts()">
+
+            </div>
+
+            <div class="sort-box">
+
+                <label>
+
+                    Ordenar
+
+                </label>
+
+                <select
+                    [(ngModel)]="sortOption"
+                    (change)="sortProducts()">
+
+                    <option value="default">
+
+                        Más recientes
+
+                    </option>
+
+                    <option value="priceAsc">
+
+                        Precio ↑
+
+                    </option>
+
+                    <option value="priceDesc">
+
+                        Precio ↓
+
+                    </option>
+
+                    <option value="nameAsc">
+
+                        Nombre A-Z
+
+                    </option>
+
+                    <option value="nameDesc">
+
+                        Nombre Z-A
+
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <!-- MARCAS -->
+
+        <div class="filter-group">
+
+            <h3>
+
+                🏷 Marca
+
+            </h3>
+
+            <div class="chips">
+
+                <button
+
+                    *ngFor="let brand of brands"
+
+                    [class.active]="brand===selectedBrand"
+
+                    (click)="selectedBrand=brand;filterProducts()">
+
+                    {{ brand }}
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- CATEGORÍAS -->
+
+        <div class="filter-group">
+
+            <h3>
+
+                📂 Categoría
+
+            </h3>
+
+            <div class="chips">
+
+                <button
+
+                    *ngFor="let category of categories"
+
+                    [class.active]="category===selectedCategory"
+
+                    (click)="selectedCategory=category;filterProducts()">
+
+                    {{ category }}
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="filters-footer">
+
+            <button
+                class="clear-btn"
+                (click)="clearFilters()">
+
+                🗑 Limpiar filtros
+
+            </button>
+
+            <span class="results">
+
+                Mostrando
+                <strong>{{ filteredProducts.length }}</strong>
+                productos
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- BOTONES -->
+
+    <div class="top-actions">
+
+        <button routerLink="/create">
+
+            ➕ Crear producto
+
+        </button>
+
+        <button routerLink="/cart">
+
+            🛒 Ver carrito
+
+        </button>
+
+    </div>
+
+    <!-- MENSAJES -->
+
+    <div
+        *ngIf="loading"
+        class="loading">
+
+        Cargando productos...
+
+    </div>
+
+    <div
+        *ngIf="error"
+        class="error">
+
+        {{ error }}
+
+    </div>
+
+    <!-- PRODUCTOS -->
+
+    <div
+        *ngIf="!loading && !error"
+        class="products-grid">
+
+        <app-product-card
+
+            *ngFor="let product of filteredProducts"
+
+            [product]="product"
+
+            (add)="addToCart($event)">
+
+        </app-product-card>
+
+    </div>
+
+    <!-- EMPTY -->
+
+    <div
+
+        *ngIf="!loading && !error && filteredProducts.length===0"
+
+        class="no-results">
+
+        <h2>
+
+            😕 No encontramos productos
+
+        </h2>
+
+        <p>
+
+            Prueba otra búsqueda.
+
+        </p>
+
+        <button
+            class="clear-btn"
+            (click)="clearFilters()">
+
+            Limpiar filtros
+
+        </button>
+
+    </div>
+
+</section>

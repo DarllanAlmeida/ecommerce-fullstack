@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Nike",
+    "logoUrl": "",
+    "country": "USA",
+    "description": "Marca líder en calzado deportivo."
+  },
+  {
+    "name": "Adidas",
+    "logoUrl": "",
+    "country": "Alemania",
+    "description": "Marca alemana especializada en deporte."
+  },
+  {
+    "name": "New Balance",
+    "logoUrl": "",
+    "country": "USA",
+    "description": "Marca reconocida por su comodidad."
+  },
+  {
+    "name": "Puma",
+    "logoUrl": "",
+    "country": "Alemania",
+    "description": "Marca deportiva internacional."
+  }
+]

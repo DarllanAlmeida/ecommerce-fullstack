@@ -1,0 +1,85 @@
+.status-badge{
+
+
+    display:inline-block;
+
+    padding:7px 16px;
+
+    border-radius:999px;
+
+    font-size:13px;
+
+    font-weight:800;
+
+
+}
+
+
+
+
+
+.pending{
+
+
+    background:#fff3cd;
+
+    color:#856404;
+
+
+}
+
+
+
+
+
+.paid{
+
+
+    background:#cff4fc;
+
+    color:#055160;
+
+
+}
+
+
+
+
+
+.shipped{
+
+
+    background:#cfe2ff;
+
+    color:#084298;
+
+
+}
+
+
+
+
+
+.delivered{
+
+
+    background:#d1e7dd;
+
+    color:#0f5132;
+
+
+}
+
+
+
+
+
+.cancelled{
+
+
+    background:#f8d7da;
+
+    color:#842029;
+
+
+}
