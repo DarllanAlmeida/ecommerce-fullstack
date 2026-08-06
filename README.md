@@ -109,8 +109,6 @@ Admin Panel
 
 ---
 
-# 📸 Capturas del proyecto
-
 
 # 📸 Capturas del proyecto
 
